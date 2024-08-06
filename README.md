@@ -1,4 +1,5 @@
-# Disease-Target-Tracker - A tool to find disease-related targets using protein-protein interaction networks
+# Disease-Target-Tracker
+# A tool to find disease-related targets using protein-protein interaction networks
 ##
 
 <p align="center">
