@@ -78,7 +78,7 @@ First download and import our workflow [Disease_related_protein_classification_a
 <img src="./media/MySQL_Connector.png?raw=true" width="500">
 </p>
 
-## 2. Select input files from TTD and Open Targets Platform ##
+## 2. Select input files from Terapeutic Targets Database (TTD) ##
 
 Download the files "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from [TTD](http://db.idrblab.net/ttd/full-data-download).
 
@@ -92,7 +92,9 @@ Configure the "Therapeutic Target Database" node by browsing the files. Taget fi
 <img src="./media/Therapeutic_Target_Database.png?raw=true" width="500">
 </p>
 
-On Open Targets Platform search for any Disease and download the Associated Targets file on TSV format.
+## 3. Select input files from Open Targets Platform ##
+
+On Open [Targets Platform](https://platform.opentargets.org/) search for any Disease and download the Associated Targets file on TSV format.
 
 <p align="center">
 <img src="./media/Open_Targets_Platform_website.png?raw=true" width="500">
@@ -104,8 +106,14 @@ Configure "Open Targets Platform" node by browsing the file.
 <img src="./media/Open_Targets_Platform.png?raw=true" width="500">
 </p>
 
+## 4. Select input files from Human Atlas ##
 
-## 3. Disease selection ##
+Download the files "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from [Human Atlas](https://www.proteinatlas.org/search/protein_class%3ADisease+related+genes).
+<p align="center">
+<img src="./media/Open_Targets_Platform.png?raw=true" width="500">
+</p>
+
+## 5. Disease selection ##
 
 Frist execute "Disease list" node to read all available diseases on ChEMBL database.
 
@@ -119,7 +127,7 @@ Then configure and select one disease from the list on "Disease selector" node. 
 <img src="./media/Disease_selector.png?raw=true" width="500">
 </p>
 
-## 4. Choose a folder to write the results and execute the workflow ##
+## 6. Choose a folder to write the results and execute the workflow ##
 
 Configure "Folder to write results" node by browsing to a folder to write result files. Make sure to select a folder and not a file.
 
@@ -129,14 +137,12 @@ Configure "Folder to write results" node by browsing to a folder to write result
 
 Finaly execute the rest of the workflow by clicking on "Execute all executable nodes" buttom or press (SHIFT+F7).
 
-## 5. Results ##
+## 7. Results ##
 
 **NOTE:** The following tables are sample of the result files, not the complete results.
 
-### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./Outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
+### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./sample_outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
  Has protein-protein interactions, as Prot_A and Prot_B columns with the protein genes, uniprot ID for each protein, interaction score and Disease. If the target is a protein complex, the gene name is replaced by ChEMBL ID of the complex, and the uniprot ID will be a list of uniprot IDs.
-
-<font size="1">
 
 | Prot_A | Prot_B | score | Disease             |
 |--------|--------|-------|---------------------|
@@ -151,15 +157,12 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 | GNB3   | GNG13  | 0.999 | Alzheimer's Disease |
 |...     |...     |...    |...                  |
 
-</font> 
 
-### [2_PPI_network_Alzheimer_opentarget-filter.csv](./Outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
+### [2_PPI_network_Alzheimer_opentarget-filter.csv](./sample_outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
-### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./Outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
+### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./sample_outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
 List of single proteins related to the disease, sorted by target score.
-
-<font size="1">
 
 | Target_name                                    | Complex_participants | Node_id  | Uniprot_id             | Target_type     | Target_group   | Source_db           | Target_group_score | Target_group_score_normalized | Conectivity_Score |
 |------------------------------------------------|----------------------|----------|------------------------|-----------------|----------------|---------------------|--------------------|-------------------------------|-------------------|
@@ -174,13 +177,10 @@ List of single proteins related to the disease, sorted by target score.
 | sodium channel protein type 10 subunit alpha … | SCN1B,SCN4B,SCN10A   | CPX-8682 | Q07699, Q8IWT1, Q9Y5Y9 | PROTEIN COMPLEX | T4             | STRING              | 0.1                | 0.1                           | 0.91594389683585  |
 |...|...|...|...|...|...|...|...|...|...|
 
-</font> 
-
-
-### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./Outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
+### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./sample_outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
-### 6. Network visualization ###
+### 8. Network visualization ###
 The network can be visualized using Cytoscape and the attributes can be added by loading [3_Targets_score_Alzheimer_no-opentarget-filter](./sample_outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) file to the network nodes.
 
 <p align="center">
