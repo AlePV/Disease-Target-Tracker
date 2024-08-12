@@ -1,6 +1,5 @@
 # Disease-Target-Tracker
-# A tool to find disease-related targets using protein-protein interaction networks
-##
+# A tool to find disease-related targets based on protein-protein interaction networks
 
 <p align="center">
     <img src="./media/Disease_related_protein_classification_and_PPI_networks_WF.png?raw=true" width="1000">
@@ -13,7 +12,7 @@ This Knime workflow uses multiple databases to search for disease related protei
 - T3: Score 0.4, the target has compounds under preclinical investigations or phase 0 of development for indicated disease.
 - T4: Score 0.1, the target has interactions with targets T1, T2 or T3.
 
-**Note:** some targets can have multiple target classifications.
+**Note:** Some targets can have multiple target classifications.
 
 Finally the workflow provides protein-protein networks and lists of targets with their classifications for the indicated disease.  
 
@@ -24,7 +23,7 @@ Finally the workflow provides protein-protein networks and lists of targets with
 - "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from TTD. [TTD full data downloads](http://db.idrblab.net/ttd/full-data-download). 
 - Associated targets for a disease of choice on TSV format from Open Targets Platform. [Open Target Platform website](https://platform.opentargets.org/).
 - Knime Analytics platform version 4.6.3 or higher. [Download Knime](https://www.knime.com/knime-analytics-platform).
-- Our *in-house* [Knime](https://www.knime.com/) workflow [Disease_related_protein_classification_and_PPI_networks](./Disease_related_protein_classification_and_PPI_networks.knwf).
+- Our *in-house* [Knime](https://www.knime.com/) workflow [Disease Target Tracker](./Disease_Target_Tracker.knwf).
 
 
 **To follow these instructions you must have already installed [Knime](https://www.knime.com/), [MySQL](https://dev.mysql.com/doc/refman/8.0/en/installing.html) and configured the lastest [ChEBML database](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/) on your machine.**
