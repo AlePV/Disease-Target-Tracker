@@ -133,7 +133,7 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 
 **NOTE:** The following tables are sample of the result files, not the complete results.
 
-### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./Outputs/sample_outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
+### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./Outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
  Has protein-protein interactions, as Prot_A and Prot_B columns with the protein genes, uniprot ID for each protein, interaction score and Disease. If the target is a protein complex, the gene name is replaced by ChEMBL ID of the complex, and the uniprot ID will be a list of uniprot IDs.
 
 <font size="1">
@@ -153,10 +153,10 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 
 </font> 
 
-### [2_PPI_network_Alzheimer_opentarget-filter.csv](./Outputs/sample_outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
+### [2_PPI_network_Alzheimer_opentarget-filter.csv](./Outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
-### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./Outputs/sample_outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
+### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./Outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
 List of single proteins related to the disease, sorted by target score.
 
 <font size="1">
@@ -177,7 +177,7 @@ List of single proteins related to the disease, sorted by target score.
 </font> 
 
 
-### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./Outputs/sample_outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
+### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./Outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
 ### 6. Network visualization ###
