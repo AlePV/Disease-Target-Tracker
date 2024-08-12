@@ -135,6 +135,8 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 
 ### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./sample_outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
  Has protein-protein interactions, as Prot_A and Prot_B columns with the protein genes, uniprot ID for each protein, interaction score and Disease. If the target is a protein complex, the gene name is replaced by ChEMBL ID of the complex, and the uniprot ID will be a list of uniprot IDs.
+
+<font size="1"> 
  
 | Prot_A | Prot_B | score | Disease             |
 |--------|--------|-------|---------------------|
@@ -149,11 +151,15 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 | GNB3   | GNG13  | 0.999 | Alzheimer's Disease |
 |...     |...     |...    |...                  |
 
+</font>
+
 ### [2_PPI_network_Alzheimer_opentarget-filter.csv](./sample_outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
 ### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./sample_outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
 List of single proteins related to the disease, sorted by target score.
+
+<font size="1">
 
 | Target_name                                    | Complex_participants | Node_id  | Uniprot_id             | Target_type     | Target_group   | Source_db           | Target_group_score | Target_group_score_normalized | Conectivity_Score |
 |------------------------------------------------|----------------------|----------|------------------------|-----------------|----------------|---------------------|--------------------|-------------------------------|-------------------|
@@ -168,6 +174,7 @@ List of single proteins related to the disease, sorted by target score.
 | sodium channel protein type 10 subunit alpha … | SCN1B,SCN4B,SCN10A   | CPX-8682 | Q07699, Q8IWT1, Q9Y5Y9 | PROTEIN COMPLEX | T4             | STRING              | 0.1                | 0.1                           | 0.91594389683585  |
 |...|...|...|...|...|...|...|...|...|...|
 
+</font>
 
 ### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./sample_outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
