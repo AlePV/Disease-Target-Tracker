@@ -132,7 +132,7 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 
 ## 5. Results ##
 
-The following tables are previews of the result files, not the complete results.
+**NOTE:** The following tables are sample of the result files, not the complete results.
 
 ### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./sample_outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
  Has protein-protein interactions, as Prot_A and Prot_B columns with the protein genes, uniprot ID for each protein, interaction score and Disease. If the target is a protein complex, the gene name is replaced by ChEMBL ID of the complex, and the uniprot ID will be a list of uniprot IDs.
@@ -148,23 +148,28 @@ The following tables are previews of the result files, not the complete results.
 | GNB3   | GNG10  | 0.998 | Alzheimer's Disease |
 | GNB3   | GNGT1  | 0.999 | Alzheimer's Disease |
 | GNB3   | GNG13  | 0.999 | Alzheimer's Disease |
+|...     |...     |...    |...                  |
+
 ### [2_PPI_network_Alzheimer_opentarget-filter.csv](./sample_outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
 ### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./sample_outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
 List of single proteins related to the disease, sorted by target score.
 
-| target_name                                                | target | uniprotID  | target_type    | target_group | source_db   | target_group_score | target_group_score_normalized | Disease             |
-|------------------------------------------------------------|--------|------------|----------------|--------------|-------------|--------------------|-------------------------------|---------------------|
-| Acetylcholinesterase                                       | ACHE   | P22303     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL, TTD | 2.1                | 1                             | Alzheimer's Disease |
-| Beta amyloid A4 protein                                    | APP    | E9PG40     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL, TTD | 2.1                | 1                             | Alzheimer's Disease |
-| Chromobox protein homolog 1                                | CBX1   | P83916     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL      | 2.1                | 1                             | Alzheimer's Disease |
-| Dopamine D2 receptor                                       | DRD2   | P14416     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL, TTD | 2.1                | 1                             | Alzheimer's Disease |
-| Histone-lysine N-methyltransferase, H3 lysine-9 specific 3 | EHMT2  | Q96KQ7     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL      | 2.1                | 1                             | Alzheimer's Disease |
-| Geminin                                                    | GMNN   | E2QRF9     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL      | 2.1                | 1                             | Alzheimer's Disease |
-| Glutamate NMDA receptor; GRIN1/GRIN2B                      | GRIN1  | Q5VSF9     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL, TTD | 2.1                | 1                             | Alzheimer's Disease |
-| Glutamate NMDA receptor; GRIN1/GRIN2A                      | GRIN2A | A0A6Q8PGD2 | SINGLE PROTEIN | T1, T2, T3   | ChEMBL, TTD | 2.1                | 1                             | Alzheimer's Disease |
-| Prelamin-A/C                                               | LMNA   | P02545     | SINGLE PROTEIN | T1, T2, T3   | ChEMBL      | 2.1                | 1                             | Alzheimer's Disease |
+| Target_name                                    | Complex_participants | Node_id  | Uniprot_id             | Target_type     | Target_group   | Source_db           | Target_group_score | Target_group_score_normalized | Conectivity_Score |
+|------------------------------------------------|----------------------|----------|------------------------|-----------------|----------------|---------------------|--------------------|-------------------------------|-------------------|
+| glutamate nmda receptor; grin1/grin2a          | GRIN2D,GRIN1         | CPX-289  | O15399, Q05586         | PROTEIN COMPLEX | T1, T2, T3, T4 | ChEMBL, STRING, TTD | 16.1               | 1                             |                   |
+| ubiquitin carboxyl-terminal hydrolase 1        |                      | USP1     | O94782                 | SINGLE PROTEIN  | T1, T2, T3     | ChEMBL              | 16                 | 0.994375                      |                   |
+| butyrylcholinesterase                          |                      | BCHE     | P06276                 | SINGLE PROTEIN  | T1, T2         | ChEMBL, TTD         | 15                 | 0.938125                      |                   |
+| mothers against decapentaplegic homolog 2      | SMAD4,SMAD2,SMAD3    | CPX-1    | Q13485, Q15796, P84022 | PROTEIN COMPLEX | T2, T3, T4     | ChEMBL, STRING      | 6.1                | 0.4375                        |                   |
+| bile salt export pump                          |                      | ABCB11   | O95342                 | SINGLE PROTEIN  | T2, T3         | ChEMBL              | 6                  | 0.431875                      |                   |
+| glutamate receptor 2 …                         | GRIA1,GRIA2          | CPX-8767 | P42261, P42262         | PROTEIN COMPLEX | T3, T4         | STRING, TTD         | 1.1                | 0.15625                       |                   |
+| gamma-amino-n-butyrate transaminase            |                      | ABAT     | P80404                 | SINGLE PROTEIN  | T3             | ChEMBL              | 1                  | 0.150625                      |                   |
+| alpha-2-macroglobulin-like protein 1 …         |                      | A2ML1    | A8K2U0                 | SINGLE PROTEIN  | T4             | STRING              | 0.1                | 0.1                           | 0.494391081453543 |
+| sodium channel protein type 10 subunit alpha … | SCN1B,SCN4B,SCN10A   | CPX-8682 | Q07699, Q8IWT1, Q9Y5Y9 | PROTEIN COMPLEX | T4             | STRING              | 0.1                | 0.1                           | 0.91594389683585  |
+|...|...|...|...|...|...|...|...|...|...|
+
+
 ### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./sample_outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
