@@ -2,7 +2,7 @@
 # A tool to find disease-related targets based on protein-protein interaction networks
 
 <p align="center">
-    <img src="./media/Disease_Target_Traker_WF.png?raw=true" width="1000">
+    <img src="./media/Disease_Target_Tracker_WF.png?raw=true" width="1000">
 </p>
 
 This Knime workflow uses multiple databases to search for disease related proteins by experimental reports or manual annotations, then proteins are classified by the development phase of their related drugs and assigned a score as follows:
