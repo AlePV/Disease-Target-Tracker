@@ -2,7 +2,7 @@
 # A tool to find disease-related targets based on protein-protein interaction networks
 
 <p align="center">
-    <img src="./media/Disease_Target_Tracker_WF.png?raw=true" width="1000">
+    <img src="./media/Disease_related_protein_classification_and_PPI_networks_WF.png?raw=true" width="1000">
 </p>
 
 This Knime workflow uses multiple databases to search for disease related proteins by experimental reports or manual annotations, then proteins are classified by the development phase of their related drugs and assigned a score as follows:
@@ -10,16 +10,18 @@ This Knime workflow uses multiple databases to search for disease related protei
 - T1: Score 1.0, the target has approved compounds or phase 4 of development for indicated disease.
 - T2: Score 0.7, the target has compounds under clinical trials or phases 1 to 3 of development for indicated disease.
 - T3: Score 0.4, the target has compounds under preclinical investigations or phase 0 of development for indicated disease.
-- T4: Score 0.1, the target has interactions with targets T1, T2 or T3.
+- T4: Score 0.1, the target has interactions with T1, T2 or T3 targets related to the disease. T4 targets also have an aditional conectivty score associated to how strong is their connection to the disease related targets.  
+ 
 
-**Note:** Some targets can have multiple target classifications.
 
-Finally the workflow provides protein-protein networks and lists of targets with their classifications for the indicated disease.  
+**Note:** Some targets could have multiple target classifications at the same time.
+
+The workflow provides as results two protein-protein networks and lists of targets with their classifications and scores for the indicated disease.  
 
 ## Requirements ##
 **This workflow has been programed to be used on <ins>Linux OS</ins>, no other OS where tested**
 - MySQL database service. [MySQL website and manual](https://dev.mysql.com/doc/refman/8.0/en/installing.html).
-- Last ChEMBL MySQL database. [ChEBML databases](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/).
+- Last ChEMBL MySQL database. [ChEBML databases](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_31/).
 - "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from TTD. [TTD full data downloads](http://db.idrblab.net/ttd/full-data-download). 
 - Associated targets for a disease of choice on TSV format from Open Targets Platform. [Open Target Platform website](https://platform.opentargets.org/).
 - Knime Analytics platform version 4.6.3 or higher. [Download Knime](https://www.knime.com/knime-analytics-platform).
@@ -47,14 +49,16 @@ set a password for root user:
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
 ### Download ChEMBL database and load data to MySQL ###
-Download the last release of  ChEMBL database of mysql (chembl_XX_mysql.tar.gz). **From now on, replace any XX for your downloaded ChEMBL database version.**
+**NOTE:** This workflow was design to work with the 31 release of the mysql, later releases may no be compatible due changes on the tables structure of the lastest releases of the ChEMBL database.
+
+Download the 31 release of  ChEMBL database of mysql (chembl_31_mysql.tar.gz). 
 <p align="center">
 <img src="./media/ChEMBLdb_download.png?raw=true" width="500">
 </p>
 
 Extract files:
 ```
-tar -xvf chembl_XX_mysql.tar.gz
+tar -xvf chembl_31_mysql.tar.gz
 ```
 Log into MySQL and enter yout password:
 ```
@@ -62,12 +66,12 @@ mysql -u root -p
 ```
 Create an empty database on MySQL:
 ```
-mysql> create database chembl_XX DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+mysql> create database chembl_31 DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
 ```
 Logout of MySQL and run the following command to load data to the database (**this could take several hours**):
 ```
-mysql -u root -p chembl_XX < chembl_XX_mysql.dmp
+mysql -u root -p chembl_31 < chembl_31_mysql.dmp
 ```
 
 ## 1. Connect ChEMBL local MySQL database with the workflow ##
