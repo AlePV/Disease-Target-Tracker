@@ -76,15 +76,16 @@ mysql -u root -p chembl_31 < chembl_31_mysql.dmp
 
 ## 1. Connect ChEMBL local MySQL database with the workflow ##
 
-First download and import our workflow [Disease_related_protein_classification_and_PPI_networks](./Disease_related_protein_classification_and_PPI_networks.knwf) to Knime software. Then configure **MySQL Connector** node by right clicking at the node and click configure option. Complete the fields with your Hostname, Database name, username and Password based on your personal MySQL information.
+First download and import our workflow [Disease Target Tracker](./Disease_Target_Tracker.knwf) to Knime software. Then configure **MySQL Connector** node by right clicking at the node and click configure option. Complete the fields with your Hostname, Database name, username and Password based on your personal MySQL information.
 
 <p align="center">
 <img src="./media/MySQL_Connector.png?raw=true" width="500">
 </p>
 
 ## 2. Select input files from Terapeutic Targets Database (TTD) ##
+Download 2021 release of "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers", the actual files are called ["1_P1-01-TTD_target_download.txt"](./Inputs/1_P1-01-TTD_target_download.txt) and ["2_Drugs_info-TTD.txt"](./Inputs/2_Drugs_info-TTD.txt) respectively.
 
-Download the files "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from [TTD](http://db.idrblab.net/ttd/full-data-download).
+**NOTE:** The 2024 releases have a different format that is not compatible with the current version of the workflow, nevertheless, the last version files can be Downloaded from TTD "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from [TTD download section](http://db.idrblab.net/ttd/full-data-download).
 
 <p align="center">
 <img src="./media/TTD_website.png?raw=true" width="500">
@@ -145,7 +146,7 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 
 **NOTE:** The following tables are sample of the result files, not the complete results.
 
-### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./sample_outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
+### [1_PPI_network_Alzheimer_no-opentarget-filter.csv](./Outputs/1_PPI-network_Alzheimer_Disease_no-opentarget-filter.csv) ###
  Has protein-protein interactions, as Prot_A and Prot_B columns with the protein genes, uniprot ID for each protein, interaction score and Disease. If the target is a protein complex, the gene name is replaced by ChEMBL ID of the complex, and the uniprot ID will be a list of uniprot IDs.
 
 | Prot_A | Prot_B | score | Disease             |
@@ -162,10 +163,10 @@ Finaly execute the rest of the workflow by clicking on "Execute all executable n
 |...     |...     |...    |...                  |
 
 
-### [2_PPI_network_Alzheimer_opentarget-filter.csv](./sample_outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
+### [2_PPI_network_Alzheimer_opentarget-filter.csv](./Outputs/2_PPI-network_Alzheimer_Disease_opentarget-filter.csv) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
-### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./sample_outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
+### [3_Targets_score_Alzheimer_no-opentarget-filter.xlsx](./Outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) ###
 List of single proteins related to the disease, sorted by target score.
 
 | Target_name                                    | Complex_participants | Node_id  | Uniprot_id             | Target_type     | Target_group   | Source_db           | Target_group_score | Target_group_score_normalized | Conectivity_Score |
@@ -181,11 +182,11 @@ List of single proteins related to the disease, sorted by target score.
 | sodium channel protein type 10 subunit alpha … | SCN1B,SCN4B,SCN10A   | CPX-8682 | Q07699, Q8IWT1, Q9Y5Y9 | PROTEIN COMPLEX | T4             | STRING              | 0.1                | 0.1                           | 0.91594389683585  |
 |...|...|...|...|...|...|...|...|...|...|
 
-### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./sample_outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
+### [4_Targets_score_Alzheimer_opentarget-filter.xlsx](./Outputs/4_Targets-score_Alzheimer_Disease_opentarget-filter.xlsx) ###
 Same as the previous file, but including only targets found on Open Targets Platform.
 
 ### 8. Network visualization ###
-The network can be visualized using Cytoscape and the attributes can be added by loading [3_Targets_score_Alzheimer_no-opentarget-filter](./sample_outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) file to the network nodes.
+The network can be visualized using Cytoscape and the attributes can be added by loading [3_Targets_score_Alzheimer_no-opentarget-filter](./Outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) file to the network nodes.
 
 <p align="center">
 <img src="./media/2_PPI_network_AD-01.png?raw=true" width="800">
