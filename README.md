@@ -2,7 +2,7 @@
 # A tool to find disease-related targets based on protein-protein interaction networks
 
 <p align="center">
-    <img src="./Media/Disease_related_protein_classification_and_PPI_networks_WF.png?raw=true" width="1000">
+    <img src="./media/Disease_related_protein_classification_and_PPI_networks_WF.png?raw=true" width="1000">
 </p>
 
 This Knime workflow uses multiple databases to search for disease related proteins by experimental reports or manual annotations, then proteins are classified by the development phase of their related drugs and assigned a score as follows:
@@ -53,7 +53,7 @@ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'p
 
 Download the 31 release of  ChEMBL database of mysql (chembl_31_mysql.tar.gz). 
 <p align="center">
-<img src="./Media/ChEMBLdb_download.png?raw=true" width="500">
+<img src="./media/ChEMBLdb_download.png?raw=true" width="500">
 </p>
 
 Extract files:
@@ -79,7 +79,7 @@ mysql -u root -p chembl_31 < chembl_31_mysql.dmp
 First download and import our workflow [Disease Target Tracker](./Disease_Target_Tracker.knwf) to Knime software. Then configure **MySQL Connector** node by right clicking at the node and click configure option. Complete the fields with your Hostname, Database name, username and Password based on your personal MySQL information.
 
 <p align="center">
-<img src="./Media/MySQL_Connector.png?raw=true" width="500">
+<img src="./media/MySQL_Connector.png?raw=true" width="500">
 </p>
 
 ## 2. Select input files from Terapeutic Targets Database (TTD) ##
@@ -88,35 +88,37 @@ Download 2021 release of "Target to disease mapping with ICD identifiers" and "D
 **NOTE:** The 2024 releases have a different format that is not compatible with the current version of the workflow, nevertheless, the last version files can be Downloaded from TTD "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from [TTD download section](http://db.idrblab.net/ttd/full-data-download).
 
 <p align="center">
-<img src="./Media/TTD_website.png?raw=true" width="500">
+<img src="./media/TTD_website.png?raw=true" width="500">
 </p>
 
 Configure the "Therapeutic Target Database" node by browsing the files. Taget file first and Drugs file second.
 
 <p align="center">
-<img src="./Media/Therapeutic_Target_Database.png?raw=true" width="500">
+<img src="./media/Therapeutic_Target_Database.png?raw=true" width="500">
 </p>
 
 ## 3. Select input files from Human Atlas ##
 
-On [Human Atlas](https://www.proteinatlas.org/search/protein_class%3ADisease+related+genes) download the "The disease related genes" file by clicking on download "TSV" using "Gene synonym" and "Uniprot accession" columns as filters. Or download our query from Intputs folder [3_protein_class_Disease](./Inputs/3_protein_class_Disease.tsv).
+On [Human Atlas](https://www.proteinatlas.org/search/protein_class%3ADisease+related+genes) download the "The disease related genes" file by clicking on download "TSV" using "Gene synonym" and "Uniprot accession" columns as filters. Or download our april 2024 query from this repository Intputs folder [3_protein_class_Disease](./Inputs/3_protein_class_Disease.tsv).
 
 <p align="center">
-<img src="./Media/Open_Targets_Platform.png?raw=true" width="500">
+<img src="./media/Open_Targets_Platform.png?raw=true" width="500">
 </p>
+
+Configure the "Therapeutic Target Database" node by browsing the files. Taget file first and Drugs file second.
 
 ## 4. Select input files from Open Targets Platform ##
 
 On Open [Targets Platform](https://platform.opentargets.org/) search for any Disease and download the Associated Targets file on TSV format. Or download our file where we use Alzheimer's disease as query: [MONDO_0004975-associated-diseases.tsv](https://github.com/AlePV/Disease-Target-Tracker/blob/main/Inputs/4_MONDO_0004975-associated-diseases.tsv).
 
 <p align="center">
-<img src="./Media/Open_Targets_Platform_website.png?raw=true" width="500">
+<img src="./media/Open_Targets_Platform_website.png?raw=true" width="500">
 </p>
 
-Configure "Open Targets Platform" node by browsing the file.
+Configure "Open Targets Platform" node by browsing amd selecting the file.
 
 <p align="center">
-<img src="./Media/Open_Targets_Platform.png?raw=true" width="500">
+<img src="./media/Open_Targets_Platform.png?raw=true" width="500">
 </p>
 
 
@@ -126,13 +128,13 @@ Configure "Open Targets Platform" node by browsing the file.
 Frist execute "Disease list" node to read all available diseases on ChEMBL database.
 
 <p align="center">
-<img src="./Media/Disease_list_node.png?raw=true" width="100">
+<img src="./media/Disease_list_node.png?raw=true" width="100">
 </p>
 
 Then configure and select one disease from the list on "Disease selector" node. If no list is displayed on "Disease selector" configuration reset and execute "Disease list" again, and try to configure "Disease selector" again.
 
 <p align="center">
-<img src="./Media/Disease_selector.png?raw=true" width="500">
+<img src="./media/Disease_selector.png?raw=true" width="500">
 </p>
 
 ## 6. Choose a folder to write the results and execute the workflow ##
@@ -140,7 +142,7 @@ Then configure and select one disease from the list on "Disease selector" node. 
 Configure "Folder to write results" node by browsing to a folder to write result files. Make sure to select a folder and not a file.
 
 <p align="center">
-<img src="./Media/Results_folder.png?raw=true" width="500">
+<img src="./media/Results_folder.png?raw=true" width="500">
 </p>
 
 Finaly execute the rest of the workflow by clicking on "Execute all executable nodes" buttom or press (SHIFT+F7).
@@ -192,5 +194,5 @@ Same as the previous file, but including only targets found on Open Targets Plat
 The network can be visualized using Cytoscape and the attributes can be added by loading [3_Targets_score_Alzheimer_no-opentarget-filter](./Outputs/3_Targets-score_Alzheimer_Disease_no-opentarget-filter.xlsx) file to the network nodes.
 
 <p align="center">
-<img src="./Media/2_PPI_network_AD-01.png?raw=true" width="800">
+<img src="./media/2_PPI_network_AD-01.png?raw=true" width="800">
 </p>
