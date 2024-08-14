@@ -91,7 +91,7 @@ Download 2021 release of "Target to disease mapping with ICD identifiers" and "D
 <img src="./Media/TTD_website.png?raw=true" width="500">
 </p>
 
-Configure the "Therapeutic Target Database" node by browsing the files. Taget file first and Drugs file second.
+Configure the "Therapeutic Target Database" node by browsing the files. Taget to disease file first and Drugs to disease as second file.
 
 <p align="center">
 <img src="./Media/Therapeutic_Target_Database.png?raw=true" width="500">
