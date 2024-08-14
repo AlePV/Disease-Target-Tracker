@@ -113,7 +113,7 @@ Configure the "Therapeutic Target Database" node by browsing the files. Taget fi
 
 ## 4. Select input files from Open Targets Platform ##
 
-On Open [Targets Platform](https://platform.opentargets.org/) search for any Disease and download the Associated Targets file on TSV format. Or download our file where we use Alzheimer's disease as query: [MONDO_0004975-associated-diseases.tsv](https://github.com/AlePV/Disease-Target-Tracker/blob/main/Inputs/4_MONDO_0004975-associated-diseases.tsv).
+On Open [Targets Platform](https://platform.opentargets.org/) search for any Disease and download the Associated Targets file on TSV format. Or download our file where we used Alzheimer's disease as query: [MONDO_0004975-associated-diseases.tsv](https://github.com/AlePV/Disease-Target-Tracker/blob/main/Inputs/4_MONDO_0004975-associated-diseases.tsv).
 
 <p align="center">
 <img src="./Media/Open_Targets_Platform_website.png?raw=true" width="500">
@@ -124,8 +124,6 @@ Configure "Open Targets Platform" node by browsing amd selecting the file.
 <p align="center">
 <img src="./Media/Open_Targets_Platform.png?raw=true" width="500">
 </p>
-
-
 
 ## 5. Disease selection ##
 
@@ -149,7 +147,7 @@ Configure "Folder to write results" node by browsing to a folder to write result
 <img src="./Media/Results_folder.png?raw=true" width="500">
 </p>
 
-Finaly execute the rest of the workflow by clicking on "Execute all executable nodes" buttom or press (SHIFT+F7).
+Finaly execute the rest of the workflow by clicking on "Execute all executable nodes" buttom.
 
 ## 7. Results ##
 
