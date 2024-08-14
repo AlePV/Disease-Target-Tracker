@@ -108,7 +108,7 @@ On [Human Atlas](https://www.proteinatlas.org/search/protein_class%3ADisease+rel
 Configure the "Therapeutic Target Database" node by browsing the files. Taget file first and Drugs file second.
 
 <p align="center">
-<img src="./Media/Open_Targets_Platform.png?raw=true" width="500">
+<img src="./Media/HumanAtlas_node.png?raw=true" width="500">
 </p>
 
 ## 4. Select input files from Open Targets Platform ##
