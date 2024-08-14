@@ -102,10 +102,14 @@ Configure the "Therapeutic Target Database" node by browsing the files. Taget fi
 On [Human Atlas](https://www.proteinatlas.org/search/protein_class%3ADisease+related+genes) download the "The disease related genes" file by clicking on download "TSV" using "Gene synonym" and "Uniprot accession" columns as filters. Or download our april 2024 query from this repository Intputs folder [3_protein_class_Disease](./Inputs/3_protein_class_Disease.tsv).
 
 <p align="center">
-<img src="./Media/Open_Targets_Platform.png?raw=true" width="500">
+<img src="./Media/HumanAtlas_Disease-related-genes.png?raw=true" width="500">
 </p>
 
 Configure the "Therapeutic Target Database" node by browsing the files. Taget file first and Drugs file second.
+
+<p align="center">
+<img src="./Media/Open_Targets_Platform.png?raw=true" width="500">
+</p>
 
 ## 4. Select input files from Open Targets Platform ##
 
