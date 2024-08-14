@@ -83,7 +83,7 @@ First download and import our workflow [Disease Target Tracker](./Disease_Target
 </p>
 
 ## 2. Select input files from Terapeutic Targets Database (TTD) ##
-Download 2021 release of "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers", the actual files are called ["1_P1-01-TTD_target_download.txt"](./Inputs/1_P1-01-TTD_target_download.txt) and ["2_Drugs_info-TTD.txt"](./Inputs/2_Drugs_info-TTD.txt) respectively.
+Download 2021 release of "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers", the actual files are called ["1_P1-01-TTD_target_download.txt"](./Inputs/1_P1-01-TTD_target_download.txt) and ["2_Drugs_info-TTD.txt"](./Inputs/2_Drugs_info-TTD.txt) respectively on our Inputs folder.
 
 **NOTE:** The 2024 releases have a different format that is not compatible with the current version of the workflow, nevertheless, the last version files can be Downloaded from TTD "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from [TTD download section](http://db.idrblab.net/ttd/full-data-download).
 
@@ -97,9 +97,17 @@ Configure the "Therapeutic Target Database" node by browsing the files. Taget fi
 <img src="./media/Therapeutic_Target_Database.png?raw=true" width="500">
 </p>
 
-## 3. Select input files from Open Targets Platform ##
+## 3. Select input files from Human Atlas ##
 
-On Open [Targets Platform](https://platform.opentargets.org/) search for any Disease and download the Associated Targets file on TSV format.
+On [Human Atlas](https://www.proteinatlas.org/search/protein_class%3ADisease+related+genes) download the "The disease related genes" file by clicking on download "TSV" using "Gene synonym" and "Uniprot accession" columns as filters. Or download our query from Intputs folder [3_protein_class_Disease](./Inputs/3_protein_class_Disease.tsv).
+
+<p align="center">
+<img src="./media/Open_Targets_Platform.png?raw=true" width="500">
+</p>
+
+## 4. Select input files from Open Targets Platform ##
+
+On Open [Targets Platform](https://platform.opentargets.org/) search for any Disease and download the Associated Targets file on TSV format. Or download our file where we use Alzheimer's disease as query: [MONDO_0004975-associated-diseases.tsv](https://github.com/AlePV/Disease-Target-Tracker/blob/main/Inputs/4_MONDO_0004975-associated-diseases.tsv).
 
 <p align="center">
 <img src="./media/Open_Targets_Platform_website.png?raw=true" width="500">
@@ -111,12 +119,7 @@ Configure "Open Targets Platform" node by browsing the file.
 <img src="./media/Open_Targets_Platform.png?raw=true" width="500">
 </p>
 
-## 4. Select input files from Human Atlas ##
 
-Download the files "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from [Human Atlas](https://www.proteinatlas.org/search/protein_class%3ADisease+related+genes).
-<p align="center">
-<img src="./media/Open_Targets_Platform.png?raw=true" width="500">
-</p>
 
 ## 5. Disease selection ##
 
