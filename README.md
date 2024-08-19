@@ -25,7 +25,7 @@ The workflow provides as results two protein-protein networks and lists of targe
 - "Target to disease mapping with ICD identifiers" and "Drug to disease mapping with ICD identifiers" files from TTD. [TTD full data downloads](http://db.idrblab.net/ttd/full-data-download). 
 - Associated targets for a disease of choice on TSV format from Open Targets Platform. [Open Target Platform website](https://platform.opentargets.org/).
 - Knime Analytics platform version 4.6.3 or higher. [Download Knime](https://www.knime.com/knime-analytics-platform).
-- Our *in-house* [Knime](https://www.knime.com/) workflow [Disease Target Tracker](./Disease_Target_Tracker.knwf).
+- Our *in-house* Knime workflow [Disease Target Tracker](./Disease_Target_Tracker.knwf).
 
 
 **To follow these instructions you must have already installed [Knime](https://www.knime.com/), [MySQL](https://dev.mysql.com/doc/refman/8.0/en/installing.html) and configured the lastest [ChEBML database](https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/) on your machine.**
